@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+	<modules>
+		<Scriptkid_AddFreePromoproduct>
+			<version>0.1.0</version>
+		</Scriptkid_AddFreePromoproduct>
+	</modules>
+	<global>
+		<helpers>
+			<AddFreePromoproduct>
+				<class>Scriptkid_AddFreePromoproduct_Helper</class>
+			</AddFreePromoproduct>
+		</helpers>
+	</global>
+	<frontend>
+		<events>
+			<sales_quote_collect_totals_after>
+				<observers>
+					<AddFreePromoproduct>
+						<class>Scriptkid_AddFreePromoproduct_Model_Observer</class>
+						<method>sales_quote_collect_totals_after</method>
+					</AddFreePromoproduct>
+				</observers>
+			</sales_quote_collect_totals_after>
+			<sales_quote_remove_item>
+				<observers>
+					<AddFreePromoproduct>
+						<class>Scriptkid_AddFreePromoproduct_Model_Observer</class>
+						<method>onSalesQuoteDelete</method>
+					</AddFreePromoproduct>
+				</observers>
+			</sales_quote_remove_item>
+			<!--<cart_delete_item_after>
+				<observers>
+					<AddFreePromoproduct>
+						<class>Scriptkid_AddFreePromoproduct_Model_Observer</class>
+						<method>onCartDelete</method>
+					</AddFreePromoproduct>
+				</observers>
+			</cart_delete_item_after>-->
+		</events>
+	</frontend>
+</config>
